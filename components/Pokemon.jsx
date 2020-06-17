@@ -12,8 +12,10 @@ const Link = styled(NavLink)`
   color: white;   
   text-decoration: none;
 
-  NavLink:visited {
-  color: black;
+  &:hover {
+  color: magenta;
+
+
 }
 `
 

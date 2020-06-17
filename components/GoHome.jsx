@@ -7,6 +7,10 @@ const Link = styled(NavLink)`
   font-size: 20px;
   text-align: left;
   text-decoration: none;
+
+  &:hover {
+    color: magenta;
+  }
 `
 
 export default () => (

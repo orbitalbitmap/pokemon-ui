@@ -10,7 +10,7 @@ render(
     <Switch>
       <Route path="/pokemon" component={PokemonDetailsPage} />
       <Route exact path="/" component={PokemonPage} />
-      <Route exact path="*" component={ErrorPage} />
+      <Route path="*" component={ErrorPage} />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root'),

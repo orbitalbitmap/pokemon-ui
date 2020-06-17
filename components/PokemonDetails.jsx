@@ -38,7 +38,7 @@ export default ({
       {
         formsList.length
           ? (<Forms formsList={formsList} />)
-          : 'No currently known forms for this Pokemon.'
+          : 'Currently, there are no known alternative forms for this Pokemon.'
       }
     </div>
   </PokemonPage>
