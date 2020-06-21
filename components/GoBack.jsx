@@ -13,6 +13,6 @@ const Link = styled(NavLink)`
   }
 `
 
-export default () => (
-  <Link to="/">&lt;&lt; Go Home</Link>
+export default ({ path }) => (
+  <Link to={`${path}`}>&lt;&lt; Go Back</Link>
 )

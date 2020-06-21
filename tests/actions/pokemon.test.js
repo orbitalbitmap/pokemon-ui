@@ -16,7 +16,7 @@ describe('Actions - Pokemons', () => {
     it('returns an array of pokemon from the API', async () => {
       mockAxios.onGet().reply(200, pokemonList)
 
-      const data = await fetchPokemon()
+      const data = await fetchPokemon(1)
 
       expect(data).to.deep.equal(pokemonList)
     })

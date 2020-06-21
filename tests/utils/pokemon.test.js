@@ -4,7 +4,7 @@ import {
   after, afterEach, before, describe, it,
 } from 'mocha'
 import { pokemonList, filteredPokemonList } from '../mocks/pokemonData'
-import { filterPokemon, retrievePokemon } from '../../utils/pokemons'
+import { filterPokemon, retrievePokemon, getIdFromUrl } from '../../utils/pokemons'
 import * as PokemonActions from '../../actions/pokemons'
 
 describe('Utils - Pokemon', () => {
@@ -40,6 +40,20 @@ describe('Utils - Pokemon', () => {
       const data = await retrievePokemon()
 
       expect(data).to.deep.equal(pokemonList)
+    })
+  })
+
+  describe('getIdFromUrl', () => {
+    it('returns the final portion of the URL from the location prop provided', () => {
+      const name = getIdFromUrl({ pathname: '/generation/3' })
+
+      expect(name).to.equal('3')
+    })
+
+    it('returns zero when there is no path name', () => {
+      const id = getIdFromUrl({})
+
+      expect(id).to.equal(0)
     })
   })
 })

@@ -5,7 +5,7 @@ import Title from '../components/Title'
 
 import { retrievePokemonDetails } from '../utils/pokemonDetails'
 import NotFound from '../components/NotFound'
-import GoHome from '../components/GoHome'
+import GoBack from '../components/GoBack'
 
 export default ({ location }) => {
   const [pokemonId, setPokemonId] = useState(0)
@@ -33,7 +33,7 @@ export default ({ location }) => {
   return (
     <Page>
       <Title />
-      <GoHome />
+      <GoBack path={`/generation/${genNumber}`} />
       {
         pokemonName
           ? (

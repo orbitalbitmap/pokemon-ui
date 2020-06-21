@@ -3,17 +3,18 @@ import Page from '../components/Page'
 import Pokemon from '../components/Pokemon'
 import SearchBar from '../components/SearchBox'
 import Title from '../components/Title'
+import GoBack from '../components/GoBack'
 
 import { filterPokemon, retrievePokemon } from '../utils/pokemons'
 
-export default () => {
+export default ({ location }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [pokemonList, setPokemonList] = useState([])
   const [filteredPokemonList, setFilteredPokemonList] = useState([])
 
   useEffect(() => {
     async function pullPokemon() {
-      const retrievedList = await retrievePokemon()
+      const retrievedList = await retrievePokemon(location)
 
       setPokemonList(retrievedList)
       setFilteredPokemonList(retrievedList)
@@ -31,6 +32,7 @@ export default () => {
   return (
     <Page>
       <Title />
+      <GoBack path="/" />
       <SearchBar term={searchTerm} setter={setSearchTerm} />
       {
         filteredPokemonList
