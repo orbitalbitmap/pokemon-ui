@@ -21,12 +21,14 @@ export const retrievePokemonDetails = async (location) => {
   const {
     pokedexNumber, name, generationNumber, Forms, Types,
   } = await fetchPokemonDetails(pokemonName)
+  const primaryType = Types[0].name
 
   if (!name) {
     return {
       pokedexNumber: 0,
       name: '',
       generationNumber: 0,
+      primaryType: '',
       Forms: [],
       Types: [],
     }
@@ -36,6 +38,7 @@ export const retrievePokemonDetails = async (location) => {
     pokedexNumber,
     name,
     generationNumber,
+    primaryType,
     Forms,
     Types,
   }

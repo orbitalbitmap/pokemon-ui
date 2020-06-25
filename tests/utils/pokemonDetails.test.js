@@ -5,17 +5,19 @@ import {
   after, afterEach, before, describe, it,
 } from 'mocha'
 import * as PokemonDetailsActions from '../../actions/pokemonDetails'
-import { fetchedPokemonDetails } from '../mocks/pokemonData'
-import { getNameFromUrl, retrievePokemonDetails } from '../../utils/pokemonDetails'
+import { fetchedPokemonDetails, retrievedPokemonDetails, unretrievedPokemonDetails } from '../mocks/pokemonData'
+import * as pokemonDetails from '../../utils/pokemonDetails'
 
-describe('Utils - Pokemon', () => {
+describe('Utils - PokemonDetails', () => {
   let sandbox
   let stubbedFetchPokemonDetails
+  let stubbedRetrievePokemonDetails
 
   before(() => {
     sandbox = createSandbox()
 
     stubbedFetchPokemonDetails = sandbox.stub(PokemonDetailsActions, 'fetchPokemonDetails')
+    stubbedRetrievePokemonDetails = sandbox.stub(pokemonDetails, 'retrievePokemonDetails')
   })
 
   afterEach(() => {
@@ -28,13 +30,13 @@ describe('Utils - Pokemon', () => {
 
   describe('getNameFromUrl', () => {
     it('returns the final portion of the URL from the location prop provided', () => {
-      const name = getNameFromUrl({ pathname: '/pokemon/caterpie' })
+      const name = pokemonDetails.getNameFromUrl({ pathname: '/pokemon/caterpie' })
 
       expect(name).to.equal('caterpie')
     })
 
     it('returns an empty string when there is no path name', () => {
-      const id = getNameFromUrl({})
+      const id = pokemonDetails.getNameFromUrl({})
 
       expect(id).to.equal('')
     })
@@ -43,38 +45,36 @@ describe('Utils - Pokemon', () => {
   describe('retrievePokemonDetails', () => {
     it('returns the pokemon details from the API call', async () => {
       stubbedFetchPokemonDetails.returns(fetchedPokemonDetails)
+      stubbedRetrievePokemonDetails.returns(retrievedPokemonDetails)
 
-      const data = await retrievePokemonDetails({ pathname: '/pokemon/rex' })
+      const data = await pokemonDetails.retrievePokemonDetails({ pathname: '/pokemon/rex' })
 
-      expect(data).to.deep.equal(fetchedPokemonDetails)
+      expect(data).to.deep.equal(retrievedPokemonDetails)
     })
 
     it('returns empty details when the path does not contain the correct pathing', async () => {
       stubbedFetchPokemonDetails.returns({})
-
-      const data = await retrievePokemonDetails({ pathname: '/no/a/pokemon' })
-
-      expect(data).to.deep.equal({
+      stubbedRetrievePokemonDetails.returns({
         pokedexNumber: 0,
         name: '',
         generationNumber: 0,
+        primaryType: '',
         Forms: [],
         Types: [],
       })
+
+      const data = await pokemonDetails.retrievePokemonDetails({ pathname: '/no/a/pokemon' })
+
+      expect(data).to.deep.equal(unretrievedPokemonDetails)
     })
 
     it('returns empty details when the action returns bad data', async () => {
       stubbedFetchPokemonDetails.returns({})
+      stubbedRetrievePokemonDetails.returns(unretrievedPokemonDetails)
 
-      const data = await retrievePokemonDetails({ pathname: '/pok/fakemon' })
+      const data = await pokemonDetails.retrievePokemonDetails({ pathname: '/pok/fakemon' })
 
-      expect(data).to.deep.equal({
-        pokedexNumber: 0,
-        name: '',
-        generationNumber: 0,
-        Forms: [],
-        Types: [],
-      })
+      expect(data).to.deep.equal(unretrievedPokemonDetails)
     })
   })
 })
