@@ -165,6 +165,24 @@ const fetchedPokemonDetails = {
   Types: ['Fire', 'Fighting'],
 }
 
+const retrievedPokemonDetails = {
+  pokedexNumber: 501,
+  name: 'Rex',
+  generationNumber: 1,
+  Forms: ['Alolan'],
+  Types: ['Fire', 'Fighting'],
+  primaryType: 'Fire',
+}
+
+const unretrievedPokemonDetails = {
+  pokedexNumber: 0,
+  name: '',
+  generationNumber: 0,
+  primaryType: '',
+  Forms: [],
+  Types: [],
+}
+
 module.exports = {
   pokemonList,
   formsList,
@@ -177,4 +195,6 @@ module.exports = {
   protectedPokemon,
   filteredPokemonList,
   fetchedPokemonDetails,
+  retrievedPokemonDetails,
+  unretrievedPokemonDetails,
 }
