@@ -3,8 +3,8 @@ import { createSandbox } from 'sinon'
 import {
   after, afterEach, before, describe, it,
 } from 'mocha'
-import { pokemonList, filteredPokemonList } from '../mocks/pokemonData'
-import { filterPokemon, retrievePokemon, getIdFromUrl } from '../../utils/pokemons'
+import { pokemonList } from '../mocks/pokemonData'
+import { filterPokemon, retrievePokemon } from '../../utils/pokemons'
 import * as PokemonActions from '../../actions/pokemons'
 
 describe('Utils - Pokemon', () => {
@@ -27,9 +27,9 @@ describe('Utils - Pokemon', () => {
 
   describe('filterPokemon', () => {
     it('returns an array of matching pokemon', () => {
-      const filtered = filterPokemon(pokemonList, 'cat')
+      const filtered = filterPokemon(pokemonList, 1)
 
-      expect(filtered).to.deep.equal(filteredPokemonList)
+      expect(filtered).to.deep.equal(pokemonList)
     })
   })
 
@@ -40,20 +40,6 @@ describe('Utils - Pokemon', () => {
       const data = await retrievePokemon()
 
       expect(data).to.deep.equal(pokemonList)
-    })
-  })
-
-  describe('getIdFromUrl', () => {
-    it('returns the final portion of the URL from the location prop provided', () => {
-      const name = getIdFromUrl({ pathname: '/generation/3' })
-
-      expect(name).to.equal('3')
-    })
-
-    it('returns zero when there is no path name', () => {
-      const id = getIdFromUrl({})
-
-      expect(id).to.equal(0)
     })
   })
 })

@@ -7,7 +7,7 @@ import GoBack from '../components/GoBack'
 export default () => (
   <Page>
     <Title />
-    <GoBack path="/" />
+    <GoBack />
     <NotFound message="Sorry, looks like the page you are looking for does not exist." />
   </Page>
 )

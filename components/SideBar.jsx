@@ -11,19 +11,29 @@ const SideBar = styled.div`
 `
 
 const Generation = styled.div`
-  
+  cursor: pointer;
   margin: 16px;
+
+
+  &:first-child {
+    margin-top: 100px;
+  }
+
+  &:hover {
+    color: magenta;
+  }
 `
 
-export default () => (
+export default ({ setter }) => (
   <SideBar>
-    <Generation>Generation: 1</Generation>
-    <Generation>Generation: 2</Generation>
-    <Generation>Generation: 3</Generation>
-    <Generation>Generation: 4</Generation>
-    <Generation>Generation: 5</Generation>
-    <Generation>Generation: 6</Generation>
-    <Generation>Generation: 7</Generation>
-    <Generation>Generation: 8</Generation>
+    <Generation onClick={() => setter(0)}>All Pokemon</Generation>
+    <Generation onClick={() => setter(1)}>Generation: 1</Generation>
+    <Generation onClick={() => setter(2)}>Generation: 2</Generation>
+    <Generation onClick={() => setter(3)}>Generation: 3</Generation>
+    <Generation onClick={() => setter(4)}>Generation: 4</Generation>
+    <Generation onClick={() => setter(5)}>Generation: 5</Generation>
+    <Generation onClick={() => setter(6)}>Generation: 6</Generation>
+    <Generation onClick={() => setter(7)}>Generation: 7</Generation>
+    <Generation onClick={() => setter(8)}>Generation: 8</Generation>
   </SideBar>
 )

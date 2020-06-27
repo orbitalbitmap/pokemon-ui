@@ -35,7 +35,7 @@ export default ({ location }) => {
   return (
     <Page>
       <Title />
-      <GoBack path={`/generation/${genNumber}`} />
+      <GoBack />
       {
         pokemonName
           ? (
