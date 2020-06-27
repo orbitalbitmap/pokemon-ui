@@ -14,6 +14,15 @@ const pokemonList = [{
   isProtected: 1,
   createdAt: '2020-05-23T11:42:42.000Z',
   updatedAt: '2020-05-23T11:42:42.000Z',
+},
+{
+  pokedexNumber: 197,
+  name: 'Umbreon',
+  generationNumber: 2,
+  fromId: 133,
+  isProtected: 1,
+  createdAt: '2020-06-21T16:56:31.000Z',
+  updatedAt: '2020-06-21T16:56:31.000Z',
 }]
 
 const formsList = [{
@@ -147,7 +156,25 @@ const protectedPokemon = {
   deletedAt: null,
 }
 
-const filteredPokemonList = [{
+const genFilteredPokemonList = [{
+  pokedexNumber: 1,
+  name: 'Bulbasaur',
+  generationNumber: 1,
+  fromId: null,
+  isProtected: 1,
+  createdAt: '2020-05-23T11:42:42.000Z',
+  updatedAt: '2020-05-23T11:42:42.000Z',
+}, {
+  pokedexNumber: 10,
+  name: 'Caterpie',
+  generationNumber: 1,
+  fromId: null,
+  isProtected: 1,
+  createdAt: '2020-05-23T11:42:42.000Z',
+  updatedAt: '2020-05-23T11:42:42.000Z',
+}]
+
+const nameFilteredPokemonList = [{
   pokedexNumber: 10,
   name: 'Caterpie',
   generationNumber: 1,
@@ -193,7 +220,8 @@ module.exports = {
   newPokemon,
   unprotectedPokemon,
   protectedPokemon,
-  filteredPokemonList,
+  genFilteredPokemonList,
+  nameFilteredPokemonList,
   fetchedPokemonDetails,
   retrievedPokemonDetails,
   unretrievedPokemonDetails,

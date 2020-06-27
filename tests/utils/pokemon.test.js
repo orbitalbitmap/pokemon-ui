@@ -3,8 +3,8 @@ import { createSandbox } from 'sinon'
 import {
   after, afterEach, before, describe, it,
 } from 'mocha'
-import { pokemonList } from '../mocks/pokemonData'
-import { filterPokemon, retrievePokemon } from '../../utils/pokemons'
+import { pokemonList, genFilteredPokemonList, nameFilteredPokemonList } from '../mocks/pokemonData'
+import { filterPokemonByGen, filterPokemonByName, retrievePokemon } from '../../utils/pokemons'
 import * as PokemonActions from '../../actions/pokemons'
 
 describe('Utils - Pokemon', () => {
@@ -25,11 +25,19 @@ describe('Utils - Pokemon', () => {
     sandbox.restore()
   })
 
-  describe('filterPokemon', () => {
+  describe('filterPokemonByGen', () => {
     it('returns an array of matching pokemon', () => {
-      const filtered = filterPokemon(pokemonList, 1)
+      const filtered = filterPokemonByGen(pokemonList, 1)
 
-      expect(filtered).to.deep.equal(pokemonList)
+      expect(filtered).to.deep.equal(genFilteredPokemonList)
+    })
+  })
+
+  describe('filterPokemonByName', () => {
+    it('returns an array of matching pokemon', () => {
+      const filtered = filterPokemonByName(pokemonList, 'cat')
+
+      expect(filtered).to.deep.equal(nameFilteredPokemonList)
     })
   })
 

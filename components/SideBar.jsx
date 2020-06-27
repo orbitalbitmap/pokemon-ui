@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const SideBar = styled.div`
-  background-color: white;
+  background-color: #404040;
+  color: white;
   font-size: 20px;
   height: 100%;
   position: fixed;
@@ -16,7 +17,7 @@ const Generation = styled.div`
 
 
   &:first-child {
-    margin-top: 100px;
+    margin-top: 150px;
   }
 
   &:hover {
