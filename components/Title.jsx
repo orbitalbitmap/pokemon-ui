@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Title = styled.h1`
-  margin: 30px 0;
+const Title = styled.h2`
+  margin-top: 32px;
   text-align: center;
 `
 
 export default () => (
-  <Title>Welcome to the world of Pokemon!</Title>
+  <Title>Choose your Pokemon!</Title>
 )
