@@ -13,6 +13,7 @@ module.exports = {
       name: { type: Sequelize.STRING, allowNull: false },
       generationNumber: { type: Sequelize.INTEGER, allowNull: false },
       fromId: { type: Sequelize.INTEGER, allowNull: true },
+      slug: { type: Sequelize.STRING, allowNull: false },
       isProtected: { type: Sequelize.TINYINT, default: 0 },
       createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') },
       updatedAt: {

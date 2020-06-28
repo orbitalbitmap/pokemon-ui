@@ -4,6 +4,7 @@ import Pokemon from '../components/Pokemon'
 import SearchBar from '../components/SearchBox'
 import SideBar from '../components/SideBar'
 import Title from '../components/Title'
+import TitleBar from '../components/TitleBar'
 
 import { filterPokemonByGen, filterPokemonByName, retrievePokemon } from '../utils/pokemons'
 
@@ -44,6 +45,7 @@ export default () => {
     <>
       <SideBar setter={setGeneration} />
       <Page>
+        <TitleBar />
         <Title />
         <SearchBar term={searchTerm} setter={setSearchTerm} />
         {

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Forms from './Forms'
 import Types from './Types'
 
-import returnImagePathString from '../helpers/returnImagePath'
 import { typeColors } from '../public/javascript/typeTextColor'
 
 const PokemonPage = styled.div`
@@ -35,6 +34,7 @@ export default ({
   pokemonName,
   typesList,
   color,
+  slug,
 }) => (
   <PokemonPage>
 
@@ -46,7 +46,7 @@ export default ({
             : `#${pokemonId}: ${pokemonName}`
         }
       </div>
-      <PokemonImage src={returnImagePathString(genNumber, pokemonName)} alt={pokemonName} />
+      <PokemonImage src={`images/gen${genNumber}/${slug}.png`} alt={pokemonName} />
       <div>{`Generation: ${genNumber}`}</div>
       <div>
         <Types typesList={typesList} />

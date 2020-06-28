@@ -1332,6 +1332,11 @@ module.exports = {
     { PokemonPokedexNumber: 889, typeId: 6 },
     { PokemonPokedexNumber: 890, typeId: 14 },
     { PokemonPokedexNumber: 890, typeId: 3 },
+    { PokemonPokedexNumber: 891, typeId: 6 },
+    { PokemonPokedexNumber: 892, typeId: 6 },
+    { PokemonPokedexNumber: 892, typeId: 2 },
+    { PokemonPokedexNumber: 893, typeId: 2 },
+    { PokemonPokedexNumber: 893, typeId: 10 },
   ]),
 
   down: async queryInterface => queryInterface.bulkDelete('PokemonTypes'),

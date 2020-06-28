@@ -3,11 +3,11 @@ import { expect } from 'chai'
 import { describe, it } from 'mocha'
 import { shallow } from 'enzyme'
 
-import Title from '../../components/Title'
+import TitleBar from '../../components/TitleBar'
 
-describe('Components - Title', () => {
-  it('displays the title to the screen.', () => {
-    const wrapper = shallow(<Title />)
+describe('Components - TitleBar', () => {
+  it('displays the titleBar to the screen.', () => {
+    const wrapper = shallow(<TitleBar />)
 
     expect(wrapper.text()).to.equal('Welcome to the world of Pokemon!')
   })
