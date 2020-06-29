@@ -150,8 +150,8 @@ module.exports = {
     { name: 'Dratini', generationNumber: 1, fromId: null, slug: 'dratini', isProtected: 1 },
     { name: 'Dragonair', generationNumber: 1, fromId: 147, slug: 'dragonair', isProtected: 1 },
     { name: 'Dragonite', generationNumber: 1, fromId: 148, slug: 'dragonite', isProtected: 1 },
-    { name: 'Mewtwo', generationNumber: 1, fromId: null, slug: 'mew', isProtected: 1 },
-    { name: 'Mew', generationNumber: 1, fromId: null, slug: 'mewtwo', isProtected: 1 },
+    { name: 'Mewtwo', generationNumber: 1, fromId: null, slug: 'mewtwo', isProtected: 1 },
+    { name: 'Mew', generationNumber: 1, fromId: null, slug: 'mew', isProtected: 1 },
 
     { name: 'Chikorita', generationNumber: 2, fromId: null, slug: 'chikorita', isProtected: 1 },
     { name: 'Bayleef', generationNumber: 2, fromId: 153, slug: 'bayleef', isProtected: 1 },
