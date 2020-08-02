@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
 import Page from '../components/Page'
 import Pokemon from '../components/Pokemon'
 import SearchBar from '../components/SearchBox'
@@ -8,7 +9,21 @@ import TitleBar from '../components/TitleBar'
 
 import { filterPokemonByGen, filterPokemonByName, retrievePokemon } from '../utils/pokemons'
 
+const PokemonImage = styled.img`
+  width: 40px;
+  height: 40px;
+
+  &:hover {
+  color: magenta;
+}
+`
+
 export default () => {
+  const reactGridStyling = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(6, 150px)',
+    justifyContent: 'center',
+  }
   const [searchTerm, setSearchTerm] = useState('')
   const [generation, setGeneration] = useState(0)
   const [pokemonList, setPokemonList] = useState([])
@@ -48,13 +63,21 @@ export default () => {
         <TitleBar />
         <Title />
         <SearchBar term={searchTerm} setter={setSearchTerm} />
-        {
-          filteredPokemonList
-            ? filteredPokemonList.map(pokemon => (
-              <Pokemon key={pokemon.pokedexNumber} name={pokemon.name} />
-            ))
-            : (<div>Nothing here</div>)
-        }
+        <div className="pokemonList" style={reactGridStyling}>
+          {
+            filteredPokemonList
+              ? filteredPokemonList.map(pokemon => (
+                <div key={pokemon.name} style={{ textAlign: 'center', margin: '5px 0' }}>
+                  <PokemonImage
+                    src={`images/gen${pokemon.generationNumber}/${pokemon.slug}.png`}
+                    alt={pokemon.name}
+                  />
+                  <Pokemon key={pokemon.pokedexNumber} name={pokemon.name} />
+                </div>
+              ))
+              : (<div>Nothing here</div>)
+          }
+        </div>
       </Page>
     </>
   )
