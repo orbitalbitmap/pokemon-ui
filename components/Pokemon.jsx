@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const Pokemon = styled.div`
   font-size: 20px;
-  margin-top: 8px;
+  margin: 10px 0;
   text-align: center;
 `
 
@@ -14,8 +14,6 @@ const Link = styled(NavLink)`
 
   &:hover {
   color: magenta;
-
-
 }
 `
 
