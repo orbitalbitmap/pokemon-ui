@@ -21,7 +21,7 @@ export const retrievePokemonDetails = async (location) => {
   }
 
   const {
-    pokedexNumber, name, generationNumber, Forms, Types, slug,
+    pokedexNumber, name, generationNumber, Forms, Types, slug, description1, description2,
   } = await fetchPokemonDetails(pokemonName)
   const primaryType = Types[0].name
 
@@ -34,6 +34,8 @@ export const retrievePokemonDetails = async (location) => {
       slug: '',
       Forms: [],
       Types: [],
+      description1: '',
+      description2: ''
     }
   }
 
@@ -45,5 +47,7 @@ export const retrievePokemonDetails = async (location) => {
     slug,
     Forms,
     Types,
+    description1,
+    description2,
   }
 }

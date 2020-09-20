@@ -27,6 +27,10 @@ const Card = styled.div`
 
 `
 
+const Description = styled.div`
+  margin-bottom: 12px;
+`
+
 export default ({
   formsList,
   genNumber,
@@ -35,6 +39,8 @@ export default ({
   typesList,
   color,
   slug,
+  description1,
+  description2,
 }) => (
   <PokemonPage>
 
@@ -51,6 +57,12 @@ export default ({
       <div>
         <Types typesList={typesList} />
       </div>
+      <Description>
+        { Math.random() >= 0.5
+          ? description1
+          : description2
+        }
+      </Description>
       <div>
         {
           formsList.length

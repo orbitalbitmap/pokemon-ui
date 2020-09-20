@@ -4,6 +4,8 @@ export default (connection, Sequelize) => connection.define('Pokemons', {
   generationNumber: { type: Sequelize.INTEGER, allowNull: false },
   fromId: { type: Sequelize.INTEGER, allowNull: true },
   slug: { type: Sequelize.STRING, allowNull: false },
+  description1: { type: Sequelize.STRING, allowNull: false },
+  description2: { type: Sequelize.STRING, allowNull: false },
   isProtected: { type: Sequelize.TINYINT, default: 0 },
 }, {
   defaultScope: {

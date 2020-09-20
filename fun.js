@@ -1,7 +1,7 @@
+/* eslint-disable max-len */
 /* eslint-disable object-curly-newline */
-module.exports = {
-  up: async queryInterface => queryInterface.bulkInsert('Pokemons', [
-    { name: 'Bulbasaur', generationNumber: 1, fromId: null, description1: 'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.', description2: 'While it is young, it uses the nutrients that are stored in the seed on its back in order to grow.', slug: 'bulbasaur', isProtected: 1 },
+const pokemon = [
+  { name: 'Bulbasaur', generationNumber: 1, fromId: null, description1: 'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.', description2: 'While it is young, it uses the nutrients that are stored in the seed on its back in order to grow.', slug: 'bulbasaur', isProtected: 1 },
   { name: 'Ivysaur', generationNumber: 1, fromId: 1, description1: 'When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.', description2: 'Exposure to sunlight adds to its strength. Sunlight also makes the bud on its back grow larger.', slug: 'ivysaur', isProtected: 1 },
   { name: 'Venusaur', generationNumber: 1, fromId: 2, description1: 'Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.', description2: 'A bewitching aroma wafts from its flower. The fragrance becalms those engaged in a battle.', slug: 'venusaur', isProtected: 1 },
   { name: 'Charmander', generationNumber: 1, fromId: null, description1: 'It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.', description2: 'From the time it is born, a flame burns at the tip of its tail. Its life would end if the flame were to go out.', slug: 'charmander', isProtected: 1 },
@@ -901,7 +901,8 @@ module.exports = {
   { name: 'Kubfu', generationNumber: 8, fromId: null, description1: 'Kubfu trains hard to perfect its moves. The moves it masters will determine which form it takes when it evolves.', description2: 'If Kubfu pulls the long white hair on its head, its fighting spirit heightens and power wells up from the depths of its belly. ', slug: 'kubfu', isProtected: 1 },
   { name: 'Urshifu', generationNumber: 8, fromId: 891, description1: 'This form of Urshifu is a strong believer in the one-hit KO. Its strategy is to leap in close to foes and land a devastating blow with a hardened fist.', description2: 'Inhabiting the mountains of a distant region, this Pokémon races across sheer cliffs, training its legs and refining its moves.', slug: 'urshifu', isProtected: 1 },
   { name: 'Zarude', generationNumber: 8, fromId: null, description1: 'Within dense forests, this Pokémon lives in a pack with others of its kind. It\'s incredibly aggressive, and the other Pokémon of the forest fear it.', description2: 'Once the vines on Zarude\'s body tear off, they become nutrients in the soil. This helps the plants of the forest grow.', slug: 'zarude', isProtected: 1 },
-  ]),
+]
 
-  down: async queryInterface => queryInterface.bulkDelete('Pokemons'),
+module.exports = {
+  pokemon,
 }
