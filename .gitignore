@@ -3,3 +3,4 @@ setup.sql
 .env
 .DS_Store
 public/javascript/bundle.js
+previousChanges.txt

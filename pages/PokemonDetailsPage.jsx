@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react'
 import Page from '../components/Page'
 import PokemonDetails from '../components/PokemonDetails'
@@ -21,7 +22,15 @@ export default ({ location }) => {
   useEffect(() => {
     async function pullData() {
       const {
-        pokedexNumber, Forms, name, Types, generationNumber, primaryType, slug, description1, description2
+        pokedexNumber,
+        Forms,
+        name,
+        Types,
+        generationNumber,
+        primaryType,
+        slug,
+        description1,
+        description2,
       } = await retrievePokemonDetails(location)
 
       setFormsList(Forms)

@@ -66,7 +66,7 @@ module.exports = {
     { PokemonPokedexNumber: Sequelize.literal('(SELECT pokedexNumber FROM Pokemons WHERE name = \'Ponyta\')'), FormId: 5 },
     { PokemonPokedexNumber: Sequelize.literal('(SELECT pokedexNumber FROM Pokemons WHERE name = \'Rapidash\')'), FormId: 5 },
     { PokemonPokedexNumber: Sequelize.literal('(SELECT pokedexNumber FROM Pokemons WHERE name = \'Slowpoke\')'), FormId: 5 },
-    // { PokemonPokedexNumber: Sequelize.literal('(SELECT pokedexNumber FROM Pokemons WHERE name = \'Farfetch'd\')'), FormId: 5 },
+    { PokemonPokedexNumber: Sequelize.literal('(SELECT pokedexNumber FROM Pokemons WHERE name = "Farfetch\'d")'), FormId: 5 },
     { PokemonPokedexNumber: Sequelize.literal('(SELECT pokedexNumber FROM Pokemons WHERE name = \'Weezing\')'), FormId: 5 },
     { PokemonPokedexNumber: Sequelize.literal('(SELECT pokedexNumber FROM Pokemons WHERE name = \'Mr. Mime\')'), FormId: 5 },
 

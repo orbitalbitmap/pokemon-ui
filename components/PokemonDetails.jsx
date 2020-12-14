@@ -58,9 +58,10 @@ export default ({
         <Types typesList={typesList} />
       </div>
       <Description>
-        { Math.random() >= 0.5
-          ? description1
-          : description2
+        {
+          Math.random() >= 0.5
+            ? description1
+            : description2
         }
       </Description>
       <div>
